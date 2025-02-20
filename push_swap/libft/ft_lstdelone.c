@@ -6,14 +6,14 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 15:12:24 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/14 16:31:57 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/20 11:10:50 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_lstdelone(t_list *lst)
+void	ft_lstdelone(t_list *stack)
 {
-	if (lst)
-		free(lst);
+	if (stack)
+		free(stack);
 }

@@ -72,14 +72,16 @@ FT_PRINTF_DIR = ft_printf
 FT_PRINTF_LIB = $(FT_PRINTF_DIR)/libftprintf.a
 
 CC     = cc 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 LIBC   = ar rc
 RM	   = rm -rf
 
 all: $(FT_PRINTF_LIB) $(NAME)
 
 $(FT_PRINTF_LIB):
-	$(MAKE) -C $(FT_PRINTF_DIR)
+	$(MAKE) -C $(FT_PRINTF_DIR) 
+
+# -C: change directory before running the make command.
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(FT_PRINTF_LIB) -o $(NAME)

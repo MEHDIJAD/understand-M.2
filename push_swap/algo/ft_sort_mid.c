@@ -6,13 +6,13 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:27:05 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/15 13:23:12 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/20 12:55:23 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sorta(t_list **stack_a, t_list **stack_b)
+static void	ft_sort_back(t_list **stack_a, t_list **stack_b)
 {
 	int		max_place;
 	int		mid;
@@ -41,7 +41,7 @@ void	ft_sorta(t_list **stack_a, t_list **stack_b)
 	}	
 }
 
-int	ft_special_case(t_list *stack_a)
+static int	ft_special_case(t_list *stack_a)
 {
 	int		pattern;
 	int		i;
@@ -49,8 +49,8 @@ int	ft_special_case(t_list *stack_a)
 
 	i = 0;
 	pattern = 0;
-	temp = stack_a->index;
-	while (i <= ft_lstsize(stack_a) / 2)
+	temp = stack_a->index; //* give temp the first index 
+	while (i <= ft_lstsize(stack_a) / 2) //* work on just 1/2 size
 	{
 		if (temp > stack_a->index)
 			pattern++;
@@ -58,7 +58,7 @@ int	ft_special_case(t_list *stack_a)
 		stack_a = stack_a->next;
 		i++;
 	}
-	if (pattern > (ft_lstsize(stack_a) / 3) + (ft_lstsize(stack_a) / 50))
+	if (pattern > (ft_lstsize(stack_a) / 3) + (ft_lstsize(stack_a) / 50)) //* =~ 35.33%
 		return (1);
 	return (0);
 }
@@ -96,5 +96,5 @@ void	ft_sort_mid(t_list **stack_a, t_list **stack_b, int range)
 		else
 			ft_option(stack_a, flag);
 	}
-	ft_sorta(stack_a, stack_b);
+	ft_sort_back(stack_a, stack_b);
 }

@@ -6,19 +6,19 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 15:04:56 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/14 16:32:33 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/20 11:04:29 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *stack_a)
 {
-	if (!lst)
+	if (!stack_a)
 		return (NULL);
-	while (lst->next != NULL)
+	while (stack_a->next != NULL)
 	{
-		lst = lst->next;
+		stack_a = stack_a->next;
 	}
-	return (lst);
+	return (stack_a);
 }

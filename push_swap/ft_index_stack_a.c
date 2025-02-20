@@ -6,7 +6,7 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 20:12:23 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/18 13:13:53 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/20 11:13:14 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,18 @@ void	ft_find_next_min(t_list *lst, int idx)
 		min_node->index = idx;
 }
 
-void	ft_index_stack_a(t_list **lst)
+void	ft_index_stack_a(t_list **stack_a)
 {
-	int		size;
+	int		size_stack;
 	int		i;
 	int		idx;
 
-	size = ft_lstsize(*lst);
+	size_stack = ft_lstsize(*stack_a);
 	i = 0;
 	idx = 0;
-	while (i < size)
+	while (i < size_stack)
 	{
-		ft_find_next_min(*lst, idx);
+		ft_find_next_min(*stack_a, idx);
 		idx++;
 		i++;
 	}
