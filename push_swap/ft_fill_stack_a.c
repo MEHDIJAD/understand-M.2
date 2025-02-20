@@ -6,7 +6,7 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 16:12:12 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/20 10:54:23 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:51:53 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_fill(char *av, t_list **stack_a)
 		if (ft_isdigit(av[i]) || av[i] == '+' || av[i] == '-') //* if digit or sign +/- NB(we have checked form befor!)
 		{
 			number = ft_atoi(&av[i]);
-			if (number > INT_MAX || number < INT_MIN) //* check for passing max or min int 
+			if (number > INT_MAX) //* check for passing max or min int 
 			{
 				ft_printf(2, "Error\n");
 				ft_lstclear(stack_a);

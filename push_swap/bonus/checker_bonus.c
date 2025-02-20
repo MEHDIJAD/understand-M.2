@@ -6,7 +6,7 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 12:09:25 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/14 17:18:40 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:06:24 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,12 @@ static int	ft_result(t_list **stack_a, t_list **stack_b, char *input)
 	}	
 	else if (input)
 	{
+		//!
+		//if (ft_sorted(*stack_a) && ft_lstsize(*stack_b) == 0) //! i need to add this 
+		//	return (ft_lstclear(stack_a), ft_printf(2, "OK\n"), 0);
+		//else
+		//	return (ft_lstclear(stack_a), ft_printf(2, "KO\n"), 1);
+		//!
 		while (*input)
 			input += ft_sort_with_arg(stack_a, stack_b, input);
 	}
@@ -116,7 +122,8 @@ int	main(int ac, char *av[])
 	ft_index_stack_a(&stack_a);
 	input = ft_get_argument(&stack_a);
 	original_input = input;
-	ft_result(&stack_a, &stack_b, input);
+	if (!ft_result(&stack_a, &stack_b, input))
+		return (ft_lstclear(&stack_a), ft_lstclear(&stack_b), free(input), exit(0), 0);
 	if (original_input)
 		free(original_input);
 	ft_lstclear(&stack_a);

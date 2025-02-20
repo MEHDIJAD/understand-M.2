@@ -6,7 +6,7 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 18:14:28 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/18 12:47:40 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:51:21 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ long	ft_atoi(const char *str)
 	{
 		digit = str[i] - '0';
 		number = (number * 10) + digit;
+		if ((number > INT_MAX && sign == 1) || (number > (long)INT_MAX + 1 && sign == -1))
+    		return (2147483648);
 		i++;
 	}
 	return ((number * sign));
