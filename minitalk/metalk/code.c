@@ -12,33 +12,34 @@
 
 #include "minitalk.h"
 
-void ft_handelOneChar (int c, int pid)
+void ft_handelOneChar (int c)
 {
-    int bits[8];
+    int *arr;
     int i = 0;
-    while (i < 8)
+
+    arr = malloc(sizeof(int) * 8);
+    while (c > 0)
     {
-        bits[i] = c % 2;
+        if (c % 2 == 0)
+            arr[i] = 0;
+        else if (c % 2 == 1)
+            arr[i] = 1;
         c /= 2;
         i++;
     }
-    while (--i >= 0)
+    for(int j = 8; j >= 0; j--)
     {
-        if (bits[i] == 0)
-            kill(pid, SIGUSR1);
-        else
-            kill(pid, SIGUSR2);
-        usleep(100);
+        printf("%d ", arr[j]);
     }
+    printf("\n");
 }
-void ft_sendmessage(char *argv, int pid)
+void ft_sendmessage(char *argv)
 {
     while(*argv)
     {
-        ft_handelOneChar(*argv, pid);
+        ft_handelOneChar(*argv);
         argv++;
     }
-    ft_handelOneChar('\0', pid);
 }
 
 int main(int ac, char **av)
@@ -49,12 +50,8 @@ int main(int ac, char **av)
     if (ac == 3)
     {
         pid = atoi(av[1]);
-        ft_sendmessage(av[2], pid);
+        ft_sendmessage(av[2]);
     }
     else
-    {
-        write(2, "Usage: ./client <PID> <message>\n", 32);
         return (1);
-    }
-    return (0);
 }
