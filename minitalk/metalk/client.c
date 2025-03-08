@@ -16,7 +16,7 @@ void ft_handelOneChar (int c, int pid)
 {
     int bits[8];
     int i = 0;
-    while (i < 8)
+    while (i < 8) //* loop 
     {
         bits[i] = c % 2;
         c /= 2;
@@ -24,13 +24,15 @@ void ft_handelOneChar (int c, int pid)
     }
     while (--i >= 0)
     {
-        if (bits[i] == 0)
+        if (bits[i] == 0) //* for 0
             kill(pid, SIGUSR1);
         else
-            kill(pid, SIGUSR2);
-        usleep(100);
+            kill(pid, SIGUSR2); //* for 1
+        usleep(200);
+        usleep(200);
     }
 }
+
 void ft_sendmessage(char *argv, int pid)
 {
     while(*argv)
@@ -49,6 +51,8 @@ int main(int ac, char **av)
     if (ac == 3)
     {
         pid = atoi(av[1]);
+        if (pid <= 0)
+            printf("Invalid PID");
         ft_sendmessage(av[2], pid);
     }
     else
