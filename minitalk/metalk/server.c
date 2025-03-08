@@ -12,6 +12,9 @@
 
 #include "minitalk.h"
 
+//* void *context: we need it because the sa_sigaction function pointer in struct sigaction requires it
+
+
 void	ft_handler(int signum, siginfo_t *info, void *context)
 {
 	static char	c = 0;
@@ -52,7 +55,9 @@ int	main(void)
 	sigaction(SIGUSR2, &sa, NULL);
 	while (1)
 	{
-		pause();
+		pause(); //* suspends the process until a signal is received
 	}
 	return (0);
 }
+
+//! it better than just puting a while(1){ }, this will keep the programme running and take resources (CPU)
