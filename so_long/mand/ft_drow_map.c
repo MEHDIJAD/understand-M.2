@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 11:18:49 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/21 11:12:30 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:45:33 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	ft_drow_map(t_data *data)
 {

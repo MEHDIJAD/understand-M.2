@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 13:53:03 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/21 13:55:13 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:46:06 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	ft_puterror(int error_code)
 {

@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 11:20:05 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/21 13:51:29 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:45:55 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	ft_get_player_position(t_data *data)
 {

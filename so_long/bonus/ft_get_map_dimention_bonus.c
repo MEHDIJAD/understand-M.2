@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 11:19:52 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/22 15:57:26 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:41:18 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long_bonus.h"
 
 int	ft_get_map_dimention(t_data *data)
 {

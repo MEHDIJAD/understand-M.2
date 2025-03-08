@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 12:36:43 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/22 13:18:15 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:40:24 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long_bonus.h"
 
 static void	ft_parsing(t_data *data, t_param *param)
 {

@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 12:09:25 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/20 15:06:24 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:10:58 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap_bonus.h"
 
 static int	ft_correct_arg(char *arg)
 {
@@ -44,7 +44,7 @@ static void	ft_help_function(t_list **stack_a, char *input, char *arg)
 	free(arg);
 	free(input);
 	ft_lstclear(stack_a);
-	ft_printf(1, "Error\n");
+	ft_printf(2, "Error\n");
 	exit(1);
 }
 
@@ -82,26 +82,23 @@ static int	ft_result(t_list **stack_a, t_list **stack_b, char *input)
 	if (!input)
 	{
 		if (ft_sorted(*stack_a) && ft_lstsize(*stack_b) == 0)
-			return (ft_lstclear(stack_a), ft_printf(2, "OK\n"), 0);
+			return (ft_lstclear(stack_a), ft_printf(1, "OK\n"), 1);
 		else
-			return (ft_lstclear(stack_a), ft_printf(2, "KO\n"), 1);
+			return (ft_lstclear(stack_a), ft_printf(1, "KO\n"), 1);
 	}	
 	else if (input)
 	{
-		//!
-		//if (ft_sorted(*stack_a) && ft_lstsize(*stack_b) == 0) //! i need to add this 
-		//	return (ft_lstclear(stack_a), ft_printf(2, "OK\n"), 0);
-		//else
-		//	return (ft_lstclear(stack_a), ft_printf(2, "KO\n"), 1);
-		//!
 		while (*input)
 			input += ft_sort_with_arg(stack_a, stack_b, input);
 	}
 	if (ft_sorted(*stack_a) && ft_lstsize(*stack_b) == 0)
 		ft_printf(1, "OK\n");
 	else
+	{
 		ft_printf(1, "KO\n");
-	return (0);
+		return (0);
+	}
+	return (1);
 }
 
 int	main(int ac, char *av[])
@@ -123,7 +120,8 @@ int	main(int ac, char *av[])
 	input = ft_get_argument(&stack_a);
 	original_input = input;
 	if (!ft_result(&stack_a, &stack_b, input))
-		return (ft_lstclear(&stack_a), ft_lstclear(&stack_b), free(input), exit(0), 0);
+		return (ft_lstclear(&stack_a), ft_lstclear(&stack_b),
+			free(input), exit(0), 0);
 	if (original_input)
 		free(original_input);
 	ft_lstclear(&stack_a);

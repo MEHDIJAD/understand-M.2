@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 11:20:30 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/24 10:50:17 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:31:47 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	ft_init_data(t_data *data)
 {
@@ -24,16 +24,11 @@ void	ft_init_data(t_data *data)
 	data->img_widht = 0;
 	data->img_height = 0;
 	data->ptr = NULL ;
-	data->relative_path_hero = "/home/eel-garo/Desktop/M.2/so_long/"
-		"textures/player.xpm";
-	data->relative_path_wall = "/home/eel-garo/Desktop/M.2/so_long/"
-		"textures/block.xpm";
-	data->relative_path_collact = "/home/eel-garo/Desktop/M.2/so_long/"
-		"textures/collectible.xpm";
-	data->relative_path_exit = "/home/eel-garo/Desktop/M.2/so_long/"
-		"textures/exit.xpm";
-	data->relative_path_floor = "/home/eel-garo/Desktop/M.2/so_long/"
-		"textures/space.xpm";
+	data->relative_path_hero = "textures/player.xpm";
+	data->relative_path_wall = "textures/block.xpm";
+	data->relative_path_collact = "textures/collectible.xpm";
+	data->relative_path_exit = "textures/exit.xpm";
+	data->relative_path_floor = "textures/space.xpm";
 	data->x_p = 0;
 	data->y_p = 0;
 	data->cl = 0;

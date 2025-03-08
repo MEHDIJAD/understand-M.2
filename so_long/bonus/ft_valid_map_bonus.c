@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 11:20:43 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/22 14:05:12 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:41:49 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long_bonus.h"
 
 static void	ft_free_copy(char **copy, int i)
 {

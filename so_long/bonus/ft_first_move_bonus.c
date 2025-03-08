@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 11:19:00 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/22 14:09:49 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:41:05 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long_bonus.h"
 
 static t_position	ft_helper_function(int old_x, int old_y,
 	int new_x, int new_y)

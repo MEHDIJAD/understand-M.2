@@ -11,11 +11,14 @@
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
-#define MINITALK_H
+# define MINITALK_H
 
-#include <unistd.h>
-#include <stdio.h> //!!
-#include <signal.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <signal.h>
+# include <stdlib.h>
+# include <limits.h>
+# include "ft_printf/ft_printf.h"
+
+long	ft_atoi(const char *str);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 12:55:56 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/24 10:36:58 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:41:14 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long_bonus.h"
 
 static int	helper_function(t_data *data, int map_height, char *str)
 {

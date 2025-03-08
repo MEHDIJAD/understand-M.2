@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 11:10:44 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/22 14:55:56 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:04:47 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long_bonus.h"
 
 static int	ft_setup_mlx(t_data *data)
 {
@@ -47,7 +47,7 @@ int	main(int ac, char *av[])
 	ft_drow_map(&data);
 	ft_get_enemy_positions(&data);
 	mlx_loop_hook(data.mlx, ft_moving_enemy, &data);
-	mlx_hook(data.win, 2, 1 << 0, ft_first_move, &data);
+	mlx_hook(data.win, 2, 1, ft_first_move, &data);
 	mlx_hook(data.win, 17, 0, ft_exit, &data);
 	mlx_loop(data.mlx);
 	return (0);

@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 11:18:24 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/21 20:44:19 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:40:49 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long_bonus.h"
 
 void	ft_cleanup_game(t_data *data)
 {

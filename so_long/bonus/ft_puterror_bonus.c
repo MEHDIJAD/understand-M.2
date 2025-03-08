@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:28:05 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/21 15:29:52 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:41:42 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long_bonus.h"
 
 void	ft_puterror(int error_code)
 {
@@ -24,7 +24,7 @@ void	ft_puterror(int error_code)
 		ft_printf(2, "Map has more than one P or E !?, try again!\n");
 	}
 	else if (error_code == 4)
-		ft_printf(2, "Error\nMap has other  components than P,E,C,1,0\n");
+		ft_printf(2, "Error\nMap has other  components than P,E,C,1,0, and T\n");
 	else if (error_code == 5)
 		ft_printf(2, "Error\nMap is not Rectangular, try again!\n");
 	else if (error_code == 6)

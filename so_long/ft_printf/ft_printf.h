@@ -22,6 +22,5 @@ int	ft_print_format(int fd, char format_specifier, va_list ap);
 int	ft_printchar(int fd, int c);
 int	ft_printstr(int fd, char *s);
 int	ft_printdigit(int fd, long number, int base, char *base_symbols);
-int	ft_printhex(unsigned long number, int base, char *base_symbols);
 
 #endif

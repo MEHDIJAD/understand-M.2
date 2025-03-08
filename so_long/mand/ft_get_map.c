@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 12:55:56 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/24 11:27:14 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:25:37 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 static int	helper_function(t_data *data, int map_height, char *str)
 {
@@ -38,7 +38,7 @@ static int	helper_function(t_data *data, int map_height, char *str)
 		i++;
 	}
 	data->ptr[i] = NULL;
-	return (close(fd), 1);
+	return (close(fd), get_next_line(-1), 1);
 }
 
 int	ft_get_map(char *str, t_data *data)

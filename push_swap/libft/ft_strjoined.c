@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
 static char	*ft_filljoin(char *tofill, const char *str_buf, const char *buf)
 {

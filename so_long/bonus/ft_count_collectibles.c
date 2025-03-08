@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 20:26:05 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/22 11:22:57 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:40:52 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long_bonus.h"
 
 int	ft_count_collectibles(t_data *data)
 {

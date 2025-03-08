@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 11:13:24 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/21 11:41:58 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:45:36 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int	ft_exit(t_data *data)
 {

@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 11:18:07 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/21 11:02:18 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:45:26 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int	ft_surrounded_by_walls_check(t_data *data)
 {

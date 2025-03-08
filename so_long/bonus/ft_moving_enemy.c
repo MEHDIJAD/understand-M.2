@@ -6,11 +6,11 @@
 /*   By: eel-garo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:33:13 by eel-garo          #+#    #+#             */
-/*   Updated: 2025/02/24 11:26:38 by eel-garo         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:41:29 by eel-garo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long_bonus.h"
 
 size_t	ft_enemy_count(t_data *data)
 {
