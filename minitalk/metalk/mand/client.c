@@ -52,7 +52,7 @@ int	main(int ac, char **av)
 	if (ac == 3)
 	{
 		pid = ft_atoi(av[1]);
-		if (pid <= 0)
+		if (pid <= 0) //? do i need to handle pid == 0 on it on 
 		{
 			write(1, "Invalid PID", 12);
 			exit(1);
