@@ -12,26 +12,21 @@
 
 #include "minitalk_bonus.h"
 
-void	ft_handelonechar(int c, int pid)
+void	ft_handelonechar(unsigned int c, int pid)
 {
-	int	bits[8];
 	int	i;
 
 	i = 0;
 	while (i < 8)
 	{
-		bits[i] = c % 2;
-		c /= 2;
-		i++;
-	}
-	while (--i >= 0)
-	{
-		if (bits[i] == 0)
+		if (c % 2 == 0)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
 		usleep(200);
 		usleep(200);
+		c /= 2;
+		i++;
 	}
 }
 
