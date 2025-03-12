@@ -14,6 +14,7 @@
 # define MINITALK_BONUS_H
 
 # include <unistd.h>
+# include <stdio.h> //!
 # include <signal.h>
 # include <stdlib.h>
 # include <limits.h>
