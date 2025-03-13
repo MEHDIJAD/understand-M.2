@@ -20,9 +20,15 @@ void	ft_handelonechar(unsigned int c, int pid)
 	while (i < 8)
 	{
 		if (c % 2 == 0)
-			kill(pid, SIGUSR1);
-		else
-			kill(pid, SIGUSR2);
+		{
+			if (kill(pid, SIGUSR1) == -1)
+				return (ft_printf(2, "kill failed\n"), exit(1));
+		}
+		else if (c % 2 == 1)
+		{
+			if (kill(pid, SIGUSR2) == -1)
+				return (ft_printf(2, "kill failed\n"), exit(1));
+		}
 		usleep(200);
 		usleep(200);
 		c /= 2;
@@ -45,6 +51,7 @@ void	signal_hanfler(int signum)
 	(void)signum;
 	ft_printf(1, "\nmessage received\n");
 }
+
 int	main(int ac, char **av)
 {
 	int	pid;
@@ -52,12 +59,12 @@ int	main(int ac, char **av)
 	if (ac == 3)
 	{
 		pid = ft_atoi(av[1]);
-		if (pid <= 0) //? do i need to handle pid == 0 on it on 
+		if (pid <= 0)
 		{
 			write(1, "Invalid PID", 12);
 			exit(1);
 		}
-		signal(SIGUSR1, signal_hanfler); //add
+		signal(SIGUSR1, signal_hanfler);
 		ft_sendmessage(av[2], pid);
 	}
 	else

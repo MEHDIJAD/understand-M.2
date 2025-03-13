@@ -7,7 +7,9 @@ SRCS_SERVER = mand/server.c
 SRCS_CLIENT_BONUS = bonus/client_bonus.c \
 					bonus/ft_atoi.c \
 
-SRCS_SERVER_BONUS = bonus/server_bonus.c
+SRCS_SERVER_BONUS = bonus/server_bonus.c \
+					bonus/ft_handler_bonus.c \
+					bonus/ft_get_utf8_byte_count.c \
 
 
 
@@ -59,24 +61,24 @@ $(FT_PRINTF_LIB):
 	$(MAKE) -C $(FT_PRINTF_DIR) 
 
 # client mand
-$(CLIENT): $(OBJS_CLIENT)
+$(CLIENT): $(OBJS_CLIENT) $(FT_PRINTF_OB)
 	$(CC) $(CFLAGS) $(OBJS_CLIENT) $(FT_PRINTF_LIB) -o $(CLIENT)
 
 # server mand
 
-$(SERVER): $(OBJS_SERVER)
+$(SERVER): $(OBJS_SERVER) $(FT_PRINTF_OB)
 	$(CC) $(CFLAGS) $(OBJS_SERVER) $(FT_PRINTF_LIB) -o $(SERVER)
 
 #BONUS PART:
 
 # client bonus
 
-$(CLIENT_BONUS): $(OBJS_CLIENT_BONUS)
+$(CLIENT_BONUS): $(OBJS_CLIENT_BONUS) $(FT_PRINTF_OB)
 	$(CC) $(CFLAGS) $(OBJS_CLIENT_BONUS) $(FT_PRINTF_LIB) -o $(CLIENT_BONUS)
 
 # sever bonus
 
-$(SERVER_BONUS): $(OBJS_SERVER_BONUS)
+$(SERVER_BONUS): $(OBJS_SERVER_BONUS) $(FT_PRINTF_OB)
 	$(CC) $(CFLAGS) $(OBJS_SERVER_BONUS) $(FT_PRINTF_LIB) -o $(SERVER_BONUS)
 
 # this is for communt file (ft_atoi.c)

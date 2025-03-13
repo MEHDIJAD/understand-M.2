@@ -27,9 +27,13 @@ void	ft_handelonechar(int c, int pid)
 	while (--i >= 0)
 	{
 		if (bits[i] == 0)
-			kill(pid, SIGUSR1);
+		{
+			if (kill(pid, SIGUSR1) == -1)
+				return (ft_printf(2, "kill failed\n"), exit(1));
+		}
 		else
-			kill(pid, SIGUSR2);
+			if (kill(pid, SIGUSR2) == -1)
+				return (ft_printf(2, "kill failed\n"), exit(1));
 		usleep(200);
 		usleep(200);
 	}
@@ -52,9 +56,9 @@ int	main(int ac, char **av)
 	if (ac == 3)
 	{
 		pid = ft_atoi(av[1]);
-		if (pid <= 0) //? do i need to handle pid == 0 on it on 
+		if (pid <= 0)
 		{
-			write(1, "Invalid PID", 12);
+			write(2, "Invalid PID", 12);
 			exit(1);
 		}
 		ft_sendmessage(av[2], pid);

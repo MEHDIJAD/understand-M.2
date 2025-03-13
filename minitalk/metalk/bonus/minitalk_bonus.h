@@ -14,12 +14,13 @@
 # define MINITALK_BONUS_H
 
 # include <unistd.h>
-# include <stdio.h> //!
 # include <signal.h>
 # include <stdlib.h>
 # include <limits.h>
 # include "../ft_printf/ft_printf.h"
 
 long	ft_atoi(const char *str);
+void	ft_handler(int signum, siginfo_t *info, void *context);
+int		ft_get_utf8_byte_count(unsigned char *c);
 
 #endif

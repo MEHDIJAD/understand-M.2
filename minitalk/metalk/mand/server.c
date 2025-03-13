@@ -14,7 +14,6 @@
 
 //* void *context: we need it because the sa_sigaction function pointer in struct sigaction requires it
 
-
 void	ft_handler(int signum, siginfo_t *info, void *context)
 {
 	static char	c = 0;
@@ -51,8 +50,10 @@ int	main(void)
 	sa.sa_flags = SA_SIGINFO;
 	sa.sa_sigaction = ft_handler;
 	ft_printf(1, "server PID: %d\n", getpid());
-	sigaction(SIGUSR1, &sa, NULL);
-	sigaction(SIGUSR2, &sa, NULL);
+	if (sigaction(SIGUSR1, &sa, NULL) == -1)
+		return (ft_printf(2, "sigaction failed\n"), 1);
+	if (sigaction(SIGUSR2, &sa, NULL) == -1)
+		return (ft_printf(2, "sigaction failed\n"), 1);
 	while (1)
 	{
 		pause(); //* suspends the process until a signal is received
