@@ -12,6 +12,8 @@
 
 #include "minitalk_bonus.h"
 
+int	g_pid;
+
 void	ft_handelonechar(unsigned int c, int pid)
 {
 	int	i;
@@ -46,26 +48,46 @@ void	ft_sendmessage(char *argv, int pid)
 	ft_handelonechar('\0', pid);
 }
 
-void	signal_hanfler(int signum)
+void	signal_handler(int signum, siginfo_t *info, void *context)
 {
+	(void)context;
 	(void)signum;
-	ft_printf(1, "\nmessage received\n");
+	if (g_pid == info->si_pid)
+		ft_printf(1, "message received\n");
+}
+
+int	check_char(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 int	main(int ac, char **av)
 {
-	int	pid;
+	struct sigaction	sa;
 
+	sa.sa_flags = SA_SIGINFO;
+	sa.sa_sigaction = signal_handler;
+	sigemptyset(&sa.sa_mask);
 	if (ac == 3)
 	{
-		pid = ft_atoi(av[1]);
-		if (pid <= 0)
+		g_pid = ft_atoi(av[1]);
+		if (g_pid <= 0 || !check_char(av[1]))
 		{
-			write(1, "Invalid PID", 12);
+			write(2, "Invalid PID\n", 12);
 			exit(1);
 		}
-		signal(SIGUSR1, signal_hanfler);
-		ft_sendmessage(av[2], pid);
+		if (sigaction(SIGUSR1, &sa, NULL) == -1)
+			return (ft_printf(2, "sigaction failed\n"), 1);
+		ft_sendmessage(av[2], g_pid);
 	}
 	else
 	{

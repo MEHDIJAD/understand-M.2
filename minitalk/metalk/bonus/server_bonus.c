@@ -18,6 +18,7 @@ int	main(void)
 
 	sa.sa_flags = SA_SIGINFO;
 	sa.sa_sigaction = ft_handler;
+	sigemptyset(&sa.sa_mask);
 	ft_printf(1, "server PID: %d\n", getpid());
 	if (sigaction(SIGUSR1, &sa, NULL) == -1)
 		return (ft_printf(2, "sigaction failed\n"), 1);

@@ -5,12 +5,11 @@ SRCS_CLIENT = mand/client.c \
 SRCS_SERVER = mand/server.c
 
 SRCS_CLIENT_BONUS = bonus/client_bonus.c \
-					bonus/ft_atoi.c \
+					bonus/ft_atoi_bonus.c \
 
 SRCS_SERVER_BONUS = bonus/server_bonus.c \
 					bonus/ft_handler_bonus.c \
-					bonus/ft_get_utf8_byte_count.c \
-
+					bonus/ft_get_utf8_byte_count_bonus.c \
 
 
 OBJS_CLIENT = $(SRCS_CLIENT:.c=.o)

@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <signal.h>
-# include <stdlib.h>
 # include <limits.h>
 # include "../ft_printf/ft_printf.h"
 

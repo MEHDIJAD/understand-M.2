@@ -14,19 +14,12 @@
 
 void	ft_handelonechar(int c, int pid)
 {
-	int	bits[8];
 	int	i;
 
 	i = 0;
 	while (i < 8)
 	{
-		bits[i] = c % 2;
-		c /= 2;
-		i++;
-	}
-	while (--i >= 0)
-	{
-		if (bits[i] == 0)
+		if (c % 2 == 0)
 		{
 			if (kill(pid, SIGUSR1) == -1)
 				return (ft_printf(2, "kill failed\n"), exit(1));
@@ -34,6 +27,8 @@ void	ft_handelonechar(int c, int pid)
 		else
 			if (kill(pid, SIGUSR2) == -1)
 				return (ft_printf(2, "kill failed\n"), exit(1));
+		c /= 2;
+		i++;
 		usleep(200);
 		usleep(200);
 	}
@@ -49,6 +44,20 @@ void	ft_sendmessage(char *argv, int pid)
 	ft_handelonechar('\0', pid);
 }
 
+int	check_char(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	main(int ac, char **av)
 {
 	int	pid;
@@ -56,9 +65,9 @@ int	main(int ac, char **av)
 	if (ac == 3)
 	{
 		pid = ft_atoi(av[1]);
-		if (pid <= 0)
+		if (pid <= 0 || !check_char(av[1]))
 		{
-			write(2, "Invalid PID", 12);
+			write(1, "Invalid PID\n", 12);
 			exit(1);
 		}
 		ft_sendmessage(av[2], pid);
